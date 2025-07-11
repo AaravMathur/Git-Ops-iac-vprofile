@@ -1,5 +1,6 @@
 name: "Vprofile IAC"
 on:
+  workflow_dispatch:  # This enables manual triggering of the workflow
   push:
     branches:
       - main
