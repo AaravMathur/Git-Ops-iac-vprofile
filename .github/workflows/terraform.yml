@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - stage
     paths:  
       - terraform/**
   pull_request:
@@ -10,6 +11,7 @@ on:
       - main
     paths:
       - terraform/**
+  workflow_dispatch:
 
 env:
  # Credentials for deployment to AWS
