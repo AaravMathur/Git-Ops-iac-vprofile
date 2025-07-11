@@ -11,7 +11,6 @@ on:
       - main
     paths:
       - terraform/**
-  workflow_dispatch:
 
 env:
  # Credentials for deployment to AWS
@@ -19,7 +18,7 @@ env:
  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
  # S3 bucket for the Terraform state
  BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE}}
- AWS_REGION: us-east-1
+ AWS_REGION: us-east-2
  EKS_CLUSTER: vprofile-eks
 
 jobs:
@@ -59,4 +58,4 @@ jobs:
 
        - name: Terraform plan status
          if: steps.plan.outcome == 'failure' 
-         run: exit 1
+         run: exit 1     
